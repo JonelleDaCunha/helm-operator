@@ -1,0 +1,6 @@
+dependencies:
+- name: database-chart
+  repository: file://../../../database-chart
+  version: 0.1.0
+digest: sha256:4776463d531d5571affad6893d6fe7d57517f74618703eb8df1b8ebe9b684fe2
+generated: "2021-05-28T15:14:52.72119865+05:30"

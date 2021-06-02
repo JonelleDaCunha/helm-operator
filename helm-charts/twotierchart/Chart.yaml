@@ -1,0 +1,10 @@
+apiVersion: v2
+appVersion: 1.16.0
+dependencies:
+- name: database-chart
+  repository: file://../../../database-chart
+  version: 0.1.0
+description: A Helm chart for Running student api
+name: twotierchart
+type: application
+version: 0.1.0

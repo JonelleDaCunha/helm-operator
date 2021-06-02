@@ -1,0 +1,89 @@
+apiVersion: restapi.jonelledacunha/v1alpha1
+kind: MyApi
+metadata:
+  name: myapi-sample
+spec:
+  # Default values copied from <project_dir>/helm-charts/twotierchart/values.yaml
+  affinity: {}
+  autoscaling:
+    enabled: false
+    maxReplicas: 100
+    minReplicas: 1
+    targetCPUUtilizationPercentage: 80
+  database-chart:
+    affinity: {}
+    autoscaling:
+      enabled: false
+      maxReplicas: 100
+      minReplicas: 1
+      targetCPUUtilizationPercentage: 80
+    fullnameOverride: ""
+    global:
+      replicaCount: 1
+    image:
+      pullPolicy: IfNotPresent
+      repository: mysql
+      tag: 8.0.25
+    imagePullSecrets: []
+    ingress:
+      annotations: {}
+      enabled: false
+      hosts:
+      - host: chart-example.local
+        paths:
+        - backend:
+            serviceName: chart-example.local
+            servicePort: 80
+          path: /
+      tls: []
+    nameOverride: ""
+    nodeSelector: {}
+    podAnnotations: {}
+    podSecurityContext: {}
+    replicaCount: 1
+    resources: {}
+    securityContext: {}
+    service:
+      name: db-service
+      port: 3306
+      type: ClusterIP
+    serviceAccount:
+      annotations: {}
+      create: true
+      name: ""
+    tolerations: []
+  fullnameOverride: ""
+  global:
+    replicaCount: 1
+  image:
+    pullPolicy: IfNotPresent
+    repository: jonelledacunha/restapi-frontend
+    tag: latest
+  imagePullSecrets: []
+  ingress:
+    annotations: {}
+    enabled: false
+    hosts:
+    - host: chart-example.local
+      paths:
+      - backend:
+          serviceName: chart-example.local
+          servicePort: 80
+        path: /
+    tls: []
+  nameOverride: ""
+  nodeSelector: {}
+  podAnnotations: {}
+  podSecurityContext: {}
+  resources: {}
+  securityContext: {}
+  service:
+    port: 3000
+    type: ClusterIP
+  serviceAccount:
+    annotations: {}
+    create: true
+    name: ""
+  tolerations: []
+  
+  
